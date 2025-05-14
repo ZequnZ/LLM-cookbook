@@ -1,7 +1,7 @@
 import os
 
 from dotenv import load_dotenv
-from openai import AsyncAzureOpenAI
+from openai import AsyncAzureOpenAI, AzureOpenAI
 
 """
 This script initializes an OpenAI client using Azure OpenAI service.
@@ -12,9 +12,16 @@ It loads the necessary environment variables from a .env file and creates an ins
 load_dotenv(override=True)
 
 # Create OpenAI client using Azure OpenAI
-openai_client = AsyncAzureOpenAI(
+async_openai_client = AsyncAzureOpenAI(
     api_key=os.getenv("AZURE_OPENAI_API_KEY"),
     api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
     azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT"),
+    # azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT"),
+)
+
+openai_client = AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+    # azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT"),
 )

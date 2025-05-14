@@ -11,7 +11,7 @@ from agents import (
 from dotenv import load_dotenv
 from openai import OpenAIError
 
-from get_client import openai_client
+from llm_cookbook.utils.get_client import async_openai_client
 
 # Load environment variables
 load_dotenv(override=True)
@@ -23,7 +23,7 @@ set_tracing_disabled(disabled=True)
 enable_verbose_stdout_logging()
 
 # Set the default OpenAI client for the Agents SDK
-set_default_openai_client(openai_client, False)
+set_default_openai_client(async_openai_client, False)
 
 
 async def main():
