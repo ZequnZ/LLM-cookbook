@@ -7,7 +7,6 @@ from openai import AsyncAzureOpenAI, AzureOpenAI
 This script initializes an OpenAI client using Azure OpenAI service.
 It loads the necessary environment variables from a .env file and creates an instance of the AsyncAzureOpenAI client.
 """
-
 # Load environment variables
 load_dotenv(override=True)
 
