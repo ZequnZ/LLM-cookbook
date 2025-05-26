@@ -101,7 +101,11 @@ class ToolRegistry:
         """Get a tool by name."""
         return self.tools.get(name)
 
-    def list_tools(self) -> list[str]:
+    def list_tools_by_schema(self) -> list[dict[str, Any]]:
+        """List all registered tool schemas"""
+        return [tool.to_openai_schema() for tool in self.tools.values()]
+
+    def list_tools_by_names(self) -> list[str]:
         """List all registered tool names."""
         return list(self.tools.keys())
 
