@@ -40,3 +40,8 @@ tasks:
     desc: Run uv to see if libs can be updated
     cmds:
       - uv pip list --outdated
+
+  activate-venv:
+    desc: Activate the virtual environment
+    cmds:
+      - source .venv/bin/activate
