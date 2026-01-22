@@ -7,8 +7,10 @@ requires-python = ">=3.12"
 dependencies = [
     "chromadb>=1.0.9",
     "faiss-cpu>=1.11.0",
-    "fastmcp>=2.5.1",
+    "fastmcp>=2.11.1",
+    "gradio[mcp]>=5.39.0",
     "httpx>=0.28.1",
+    "huggingface-hub[cli,mcp]>=0.34.3",
     "jupyterlab>=4.4.1",
     "langchain-chroma>=0.2.4",
     "langchain-community>=0.3.24",
@@ -23,12 +25,16 @@ dependencies = [
     "llama-index-vector-stores-chroma>=0.4.1",
     "mcp[cli]>=1.7.1",
     "numpy>=2.2.6",
-    "openai>=1.76.2",
+    "openai[aiohttp]>=1.76.2",
     "openai-agents>=0.0.14",
     "pandas>=2.2.3",
+    "playwright>=1.49.0",
     "pypdf>=5.5.0",
     "python-dotenv>=1.1.0",
     "sentence-transformers>=4.1.0",
+    "smolagents[mcp]>=1.20.0",
+    "textblob>=0.19.0",
+    "langchain>=1.2.6",
 ]
 
 [build-system]
@@ -41,4 +47,6 @@ packages = ["src/llm_cookbook"]
 [dependency-groups]
 dev = [
     "ruff>=0.11.9",
+    "pre-commit>=4.0.0",
+    "jupyter-ruff>=0.3.1",
 ]
