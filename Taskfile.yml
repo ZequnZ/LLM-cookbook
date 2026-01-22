@@ -34,7 +34,7 @@ tasks:
   precommit:
     desc: Run pre-commit
     cmds:
-      - uv run pre-commit run
+      - uv run pre-commit run -v
 
   check-updatable-libs:
     desc: Run uv to see if libs can be updated
